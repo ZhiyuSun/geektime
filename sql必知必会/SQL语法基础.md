@@ -44,3 +44,29 @@ SQL 语句必须以分号结尾。
 你要记住，在 SELECT 查询中，关键字的顺序是不能颠倒的，它们的顺序是：
 
 SELECT ... FROM ... WHERE ... GROUP BY ... HAVING ... ORDER BY ...
+
+### 09丨子查询：子查询的种类都有哪些，如何提高子查询的性能？
+
+按照子查询执行的次数，我们可以将子查询分成关联子查询和非关联子查询，其中非关联子查询与主查询的执行无关，只需要执行一次即可，而关联子查询，则需要将主查询的字段值传入子查询中进行关联查询。
+
+### 10丨常用的SQL标准有哪些，在SQL92中是如何使用连接的？
+
+等值连接
+
+SELECT player_id, a.team_id, player_name, height, team_name FROM player AS a, team AS b WHERE a.team_id = b.team_id
+
+非等值连接
+
+SELECT p.player_name, p.height, h.height_level FROM player AS p, height_grades AS h WHERE p.height BETWEEN h.height_lowest AND h.height_highest
+
+左连接
+
+SELECT * FROM player LEFT JOIN team on player.team_id = team.team_id
+
+右连接
+
+SELECT * FROM player RIGHT JOIN team on player.team_id = team.team_id
+
+自连接
+
+SELECT b.player_name, b.height FROM player as a , player as b WHERE a.player_name = '布雷克-格里芬' and a.height < b.height
