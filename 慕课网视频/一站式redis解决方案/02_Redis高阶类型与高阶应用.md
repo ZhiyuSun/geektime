@@ -43,3 +43,21 @@ set test abc ex 60 nx
 
 Redis可重入锁
 
+## Redisson分布式锁的应用
+
+不使用自己的RedisLock，用Redission的redissionClient
+
+## Redis应用之好友功能
+
+关注集合，粉丝集合
+
+用到set的集合
+
+ms-follow
+
+## feed流
+
+feed流，拉，推
+
+## 用户签到功能
+

@@ -48,3 +48,9 @@ LinkedHashMap LRU cache
 
 ## 函数式基本概念
 
+## Buffer的原理
+
+### 缓冲区的概念
+
+## 反射-代理-AOP
+
