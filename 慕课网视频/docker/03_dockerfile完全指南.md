@@ -45,4 +45,46 @@ ENTRYPOINT 也可以设置容器启动时要执行的命令，但是和CMD是有
 
 ## Shell 格式和 Exec 格式
 
+## 一起构建一个Python Flask镜像
+
+docker image build -t image-name .
+
+docker container run -d -p 5000:5000 <image-name>
+
+EXPOSE 5000
+
+## dockerfile的最佳实践
+### 合理使用缓存
+
+把容易改变的内容尽量放到后面
+
+不经常改变的内容放在前面，让它利用缓存，提高我们构建镜像的速度
+
+### 合理使用dockerignore
+
+使用 .dockerignore进行文件的忽略
+
+这样sending build context的大小会变小
+
+敏感文件也可以放到.dockerignore
+### 镜像的多阶段构建
+
+dockerfile里面从两个基础镜像里构建，第二个构建的时候把第一个镜像的文件复制过来
+
+举例：gcc。我们只需要编译好的二进制文件，而不需要整个gcc环境
+
+### 尽量使用非root用户
+
+避免root的危险性
+
+这一节课需要再进行练习
+## 小结
+
+参考官方镜像的写法：
+
+https://github.com/docker-library/official-images
+
+dockerfile reference:
+
+https://docs.docker.com/engine/reference/builder/
 
