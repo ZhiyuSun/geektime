@@ -107,3 +107,14 @@ proto import 嵌套
 
 grpc 拦截器，验证器，token认证，异常，超时机制
 
+
+python安装这两个包：
+grpcio
+grpcio-tools
+
+安装protobuf support插件
+
+python -m grpc_tools.protoc --python_out=. --grpc_python_out=. -I. helloworld.proto
+
+go语言只生成一个文件，python有两个文件
+
